@@ -12,7 +12,7 @@ const Hero = () => {
 					links are performing.
 				</p>
 				<button className="bg-myCyan rounded-[28px] font-bold text-[20px] leading-[30px] text-white w-[197px] h-[56px] ">
-					<span>Get Started</span>
+					<span>Ge Started</span>
 				</button>
 			</div>
 			<div className="w-full relative ">
