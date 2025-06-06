@@ -1,3 +1,4 @@
+import ShortenedLinks from "./ShortenedLinks";
 import ShortenLinks from "./ShortenLinks";
 import { useState } from "react";
 
@@ -10,11 +11,16 @@ const AdvancedStats = () => {
 				showError ? "mt-[91px]" : "mt-[80px]"
 			} `}
 		>
-			<div className="container relative">
+			<div
+				className={`container relative transition-all ${
+					showError ? "pt-[91px]" : "pt-[80px]"
+				} `}
+			>
 				<ShortenLinks
 					showError={showError}
 					setShowError={setShowError}
 				/>
+				<ShortenedLinks />
 			</div>
 		</section>
 	);
