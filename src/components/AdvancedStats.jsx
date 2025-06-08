@@ -2,10 +2,10 @@ import ShortenedLinks from "./ShortenedLinks";
 import ShortenLinks from "./ShortenLinks";
 import { useState } from "react";
 
-import cyanLine from "/public/images/Cyan-line.svg";
-import brandIdentity from "/public/images/icon-brand-recognition.svg";
-import detailedRecords from "/public/images/icon-detailed-records.svg";
-import fullyCustomizable from "/public/images/icon-fully-customizable.svg";
+import cyanLine from "/images/Cyan-line.svg";
+import brandIdentity from "/images/icon-brand-recognition.svg";
+import detailedRecords from "/images/icon-detailed-records.svg";
+import fullyCustomizable from "/images/icon-fully-customizable.svg";
 
 const AdvancedStats = () => {
 	const [showError, setShowError] = useState(false);
