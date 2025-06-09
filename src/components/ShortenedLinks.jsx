@@ -1,28 +1,17 @@
+import { useContext } from "react";
 import LinkCard from "./LinkCard";
+import ShortenLinksContext from "../store/ShortenLinksContext";
 
-const links = [
-	{
-		url: "https://www.frontendmentor.io",
-		shortenedUrl: "https://rel.ink/k4Kyk",
-	},
-	{
-		url: "https://www.frontendmentor.io",
-		shortenedUrl: "https://rel.ink/k4Kyk",
-	},
-	{
-		url: "https://www.frontendmentor.io",
-		shortenedUrl: "https://rel.ink/k4Kyk",
-	},
-];
-
-const ShortenedLinks = () => {
+const ShortenedLinks = ({ links }) => {
+	const { linksData } = useContext(ShortenLinksContext);
 	return (
 		<div className="mt-[24px] flex flex-col gap-[24px]">
-			{links.map((link, index) => {
+			{linksData.map((link, index) => {
 				return (
 					<LinkCard
-						url={link.url}
-						shortened={link.shortenedUrl}
+						key={link.id}
+						url={link.rawUrl}
+						shortened={link.shortenedLink}
 					/>
 				);
 			})}

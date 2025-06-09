@@ -1,0 +1,56 @@
+import { createContext, useEffect, useState } from "react";
+
+const ShortenLinksContext = createContext({
+	shortenLink: () => {},
+	linksData: [],
+});
+
+export function ShortenLinksContextProvider({ children }) {
+	const [rawUrl, setRawUrl] = useState("");
+	const [linksData, setLinksData] = useState(() => {
+		const stored = localStorage.getItem("shortly-data");
+		return stored ? JSON.parse(stored) : [];
+	});
+
+	useEffect(() => {
+		if (!rawUrl) {
+			return;
+		}
+		async function shortenLink() {
+			const body = `url=${encodeURIComponent(rawUrl)}`;
+			const res = await fetch("http://localhost:5000/shorten", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body,
+			});
+
+			if (!res.ok) {
+				throw new Error("Failed to shorten URL");
+			}
+
+			const data = await res.json();
+
+			const newEntry = {
+				id: Date.now(),
+				shortenedLink: data.result_url,
+				rawUrl,
+			};
+
+			const updated = [newEntry, ...linksData];
+			setLinksData(updated);
+			localStorage.setItem("shortly-data", JSON.stringify(updated));
+		}
+
+		shortenLink();
+	}, [rawUrl]);
+
+	return (
+		<ShortenLinksContext.Provider value={{ linksData, setRawUrl }}>
+			{children}
+		</ShortenLinksContext.Provider>
+	);
+}
+
+export default ShortenLinksContext;

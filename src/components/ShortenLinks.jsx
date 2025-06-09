@@ -1,14 +1,23 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import ShortenLinksContext from "../store/ShortenLinksContext";
 
 const ShortenLinks = ({ showError, setShowError }) => {
 	const inputRef = useRef();
+
+	const { shortenLink, setRawUrl } = useContext(ShortenLinksContext);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
 		const inputLink = inputRef.current.value.trim();
 
-		inputLink === "" ? setShowError(true) : setShowError(false);
+		if (inputLink === "") {
+			setShowError(true);
+			return;
+		} else {
+			setShowError(false);
+			setRawUrl(inputLink);
+		}
 	}
 	return (
 		<form
