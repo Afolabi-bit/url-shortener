@@ -7,13 +7,15 @@ const ShortenedLinks = ({ links }) => {
 	return (
 		<div className="mt-[24px] flex flex-col gap-[24px]">
 			{linksData.map((link, index) => {
-				return (
-					<LinkCard
-						key={link.id}
-						url={link.rawUrl}
-						shortened={link.shortenedLink}
-					/>
-				);
+				if (index < 3) {
+					return (
+						<LinkCard
+							key={link.id}
+							url={link.rawUrl}
+							shortened={link.shortenedLink}
+						/>
+					);
+				}
 			})}
 		</div>
 	);

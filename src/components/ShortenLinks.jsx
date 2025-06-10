@@ -4,7 +4,8 @@ import ShortenLinksContext from "../store/ShortenLinksContext";
 const ShortenLinks = ({ showError, setShowError }) => {
 	const inputRef = useRef();
 
-	const { shortenLink, setRawUrl } = useContext(ShortenLinksContext);
+	const { isFetching, isSuccessful, setRawUrl } =
+		useContext(ShortenLinksContext);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -19,6 +20,7 @@ const ShortenLinks = ({ showError, setShowError }) => {
 			setRawUrl(inputLink);
 		}
 	}
+
 	return (
 		<form
 			onSubmit={handleSubmit}
@@ -47,8 +49,16 @@ const ShortenLinks = ({ showError, setShowError }) => {
 					Please add a link
 				</p>
 			</div>
-			<button className="rounded-[5px] bg-myCyan h-[48px] w-full font-bold leading-[27px] text-[18px] text-white ">
-				Shorten It!
+			<button
+				disabled={isFetching}
+				className={`rounded-[5px] h-[48px] w-full font-bold leading-[27px] text-[18px] text-white
+    ${
+			isFetching
+				? "bg-gray-400 cursor-not-allowed"
+				: "bg-myCyan hover:opacity-80"
+		}`}
+			>
+				{isFetching ? "Please Wait" : "Shorten It!"}
 			</button>
 		</form>
 	);

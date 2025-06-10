@@ -11,12 +11,17 @@ export function ShortenLinksContextProvider({ children }) {
 		const stored = localStorage.getItem("shortly-data");
 		return stored ? JSON.parse(stored) : [];
 	});
+	const [isFetching, setIsFetching] = useState(false);
+	const [isSuccessful, setIsSuccessful] = useState(false);
 
 	useEffect(() => {
 		if (!rawUrl) {
 			return;
 		}
 		async function shortenLink() {
+			setIsFetching(true);
+			setIsSuccessful(false);
+
 			const body = `url=${encodeURIComponent(rawUrl)}`;
 			const res = await fetch("http://localhost:5000/shorten", {
 				method: "POST",
@@ -27,6 +32,7 @@ export function ShortenLinksContextProvider({ children }) {
 			});
 
 			if (!res.ok) {
+				setIsFetching(false);
 				throw new Error("Failed to shorten URL");
 			}
 
@@ -40,6 +46,8 @@ export function ShortenLinksContextProvider({ children }) {
 
 			const updated = [newEntry, ...linksData];
 			setLinksData(updated);
+			setIsFetching(false);
+			setIsSuccessful(true);
 			localStorage.setItem("shortly-data", JSON.stringify(updated));
 		}
 
@@ -47,7 +55,9 @@ export function ShortenLinksContextProvider({ children }) {
 	}, [rawUrl]);
 
 	return (
-		<ShortenLinksContext.Provider value={{ linksData, setRawUrl }}>
+		<ShortenLinksContext.Provider
+			value={{ linksData, setRawUrl, isFetching, isSuccessful }}
+		>
 			{children}
 		</ShortenLinksContext.Provider>
 	);
