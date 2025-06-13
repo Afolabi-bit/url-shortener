@@ -59,7 +59,7 @@ export function ShortenLinksContextProvider({ children }) {
 
 	return (
 		<ShortenLinksContext.Provider
-			value={{ linksData, setRawUrl, isFetching, isSuccessful }}
+			value={{ linksData, setRawUrl, isFetching, setIsFetching, isSuccessful }}
 		>
 			{children}
 		</ShortenLinksContext.Provider>
