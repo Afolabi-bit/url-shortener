@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import ShortenLinksContext from "../store/ShortenLinksContext";
 
 const ShortenLinks = ({ showError, setShowError }) => {
@@ -6,6 +6,10 @@ const ShortenLinks = ({ showError, setShowError }) => {
 
 	const { isFetching, isSuccessful, setRawUrl } =
 		useContext(ShortenLinksContext);
+
+	useEffect(() => {
+		isSuccessful ? (inputRef.current.value = "") : null;
+	}, [isSuccessful]);
 
 	function handleSubmit(e) {
 		e.preventDefault();

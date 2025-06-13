@@ -23,13 +23,16 @@ export function ShortenLinksContextProvider({ children }) {
 			setIsSuccessful(false);
 
 			const body = `url=${encodeURIComponent(rawUrl)}`;
-			const res = await fetch("http://localhost:5000/shorten", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
+			const res = await fetch(
+				"https://url-shortener-proxy-qj4m.onrender.com/shorten",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+					},
+					body,
 				},
-				body,
-			});
+			);
 
 			if (!res.ok) {
 				setIsFetching(false);
