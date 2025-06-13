@@ -37,7 +37,7 @@ const AdvancedStats = () => {
 					</p>
 					<div className="h-[1014px] w-full relative mt-[92px] ">
 						<img
-							className="absolute bottom-0 left-[50%]  z-[0]  "
+							className="absolute bottom-0 translate-x-[-50%] left-[50%]  z-[0]  "
 							src={cyanLine}
 							alt="line"
 						/>
