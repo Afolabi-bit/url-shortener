@@ -21,6 +21,7 @@ export default {
 				myGray2: "#EFF1F7",
 				myCyan: "#2BD0D0",
 				myRed: "#F46363",
+				myBtnHover: "#9AE3E3",
 			},
 		},
 	},

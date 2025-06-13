@@ -23,7 +23,9 @@ const LinkCard = ({ url, shortened }) => {
 				{shortened}
 			</p>
 			<button
-				className="bg-myCyan rounded-[5px] w-[calc(100%-32px)] h-[40px] mx-[16px] font-bold leading-[24px] text-white "
+				className={`${
+					copied ? "bg-myPurple2" : "bg-myCyan"
+				} rounded-[5px] w-[calc(100%-32px)] h-[40px] mx-[16px] font-bold leading-[24px] text-white transition-all`}
 				onClick={handleCopy}
 			>
 				{copied ? "Copied!" : "Copy"}
