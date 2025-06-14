@@ -1,12 +1,13 @@
 import HeroImg from "/images/hero.svg";
 import HeroBg from "/images/heor-bg.svg";
+import HeroIllustration from "/images/illustration-working.svg";
 
 const Hero = () => {
 	return (
 		<section className="min-h-[558px] w-full pt-[23px] pb-[88px]">
-			<div className="container">
-				<div className="w-full  ">
-					<div className="absolute top-[96px] right-0 w-[305px] h-[337px] overflow-hidden">
+			<div className="container lg:flex lg:flex-row-reverse lg:h-[482px] border border-red-500 ">
+				<div className="w-full  lg:hidden ">
+					<div className="absolute top-[96px] right-0 w-[305px] h-[337px] overflow-hidden ">
 						<img
 							className="absolute top-0 left-0 w-[460px] h-[337px] z-[-1]  "
 							src={HeroBg}
@@ -19,6 +20,15 @@ const Hero = () => {
 						alt="Illustration of a woman working at a computer"
 					/>
 				</div>
+
+				<div className="hidden lg:block lg:w-[733px]">
+					<img
+						src={HeroIllustration}
+						alt=""
+						className="absolute"
+					/>
+				</div>
+
 				<div className="flex flex-col items-center h-[289px] mt-[60px] ">
 					<h1 className="font-bold text-[42px] leading-[48px] text-center tracking-[-1.05px] text-myPurple1 mb-[15px] ">
 						More than just shorter links

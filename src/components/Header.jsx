@@ -6,14 +6,15 @@ const Header = () => {
 	const [openNav, setOpenNav] = useState(false);
 
 	return (
-		<header className="w-full h-[33px] mt-[40px]  ">
-			<div className="container flex justify-between relative ">
+		<header className="w-full h-[33px] mt-[40px] lg:mt-[48px] lg:h-[40px] ">
+			{/* Smaller screen */}
+			<div className="container flex justify-between relative md:hidden">
 				<img
 					className="h-full"
 					src={Logo}
 					alt="Shortly logo"
 				/>
-				<nav>
+				<nav className="">
 					<button onClick={() => setOpenNav((prev) => !prev)}>
 						<img
 							src={Menu}
@@ -59,6 +60,51 @@ const Header = () => {
 						</div>
 					)}
 				</nav>
+			</div>
+
+			{/* Larger screens */}
+			<div className="container hidden md:flex justify-between h-full">
+				<div className="flex h-full items-center gap-[45.4px]">
+					<img
+						src={Logo}
+						alt=""
+					/>
+					<div className="flex items-center h-full w-[265px] justify-between ">
+						<a
+							href="#"
+							className="font-bold text-[15px] leading-[12px] text-myGray1 "
+						>
+							Features
+						</a>
+						<a
+							href="#"
+							className="font-bold text-[15px] leading-[12px] text-myGray1 "
+						>
+							Pricing
+						</a>
+						<a
+							href="#"
+							className="font-bold text-[15px] leading-[12px] text-myGray1 "
+						>
+							Resources
+						</a>
+					</div>
+				</div>
+				<div className="flex items-center h-full gap-[37px]">
+					<a
+						href="#"
+						className="font-bold text-[15px] leading-[22px] text-myGray1 "
+					>
+						Login
+					</a>
+					<a
+						href="#"
+						className="font-bold text-[15px] leading-[22px] text-white bg-myCyan rounded-[28px] h-full w-[105px] flex
+						items-center justify-center "
+					>
+						<span>Sign Up</span>
+					</a>
+				</div>
 			</div>
 		</header>
 	);
