@@ -4,7 +4,7 @@ import HeroIllustration from "/images/illustration-working.svg";
 
 const Hero = () => {
 	return (
-		<section className="min-h-[558px] w-full pt-[23px] pb-[88px]">
+		<section className="min-h-[558px] w-full pt-[23px] pb-[88px] overflow-hidden">
 			<div className="container lg:flex lg:flex-row-reverse lg:gap-[102px] ">
 				{/* Mobile hero image */}
 				<div className="w-full  lg:hidden ">
@@ -24,11 +24,13 @@ const Hero = () => {
 
 				{/* Desktop hero image */}
 				<div className="hidden lg:block lg:w-[500px]">
-					<img
-						src={HeroIllustration}
-						alt=""
-						className="absolute scale-[0.95]"
-					/>
+					<div className="relative">
+						<img
+							src={HeroIllustration}
+							alt=""
+							className="absolute scale-[1.4] top-[60px] right-[-70px] "
+						/>
+					</div>
 				</div>
 
 				<div className="flex flex-col items-center h-[289px] mt-[60px] md:items-start md:w-[593px] md:h-[451px] ">

@@ -2,13 +2,13 @@ import Logo from "/images/Logo-white.svg";
 
 const Footer = () => {
 	return (
-		<footer className="h-[776px] w-full bg-[#232127] pt-[54px] flex flex-col items-center ">
+		<footer className="h-[776px] w-full bg-[#232127] pt-[54px] flex flex-col items-center lg:flex-row md:h-[310px]  ">
 			<img
 				src={Logo}
 				alt="logo"
 			/>
 
-			<div className="my-[49.3px] flex flex-col gap-[40px]  ">
+			<div className="my-[49.3px] flex flex-col gap-[40px] lg:flex-row ">
 				<div>
 					<h3 className="font-bold text-[16px] leading-[24px] text-center tracking-[-0.25px] text-white mb-[22px] ">
 						Features
