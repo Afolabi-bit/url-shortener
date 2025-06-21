@@ -31,14 +31,15 @@ const ShortenLinks = ({ showError, setShowError }) => {
 			action=""
 			className={`${
 				showError ? "h-[182px] top-[-91px] " : "h-[160px] top-[-80px] "
-			} absolute left-0 w-full p-[24px] bg-myPurple2 rounded-[10px] flex flex-col justify-between transition-all `}
+			} absolute left-0 w-full p-[24px] bg-myPurple2 rounded-[10px] flex flex-col justify-between transition-all md:flex-row md:gap-[24px] lg:px-[64px] lg:py-[52px] `}
 		>
-			<div>
+			<div className="w-full md:w-[calc(100%-188px)]">
 				<input
 					ref={inputRef}
 					className={`rounded-[5px] bg-white font-[500] text-[16px] leading-[36px] tracking-[0.12px] text-myPurple1 text-opacity-[0.5] placeholder:text-opacity-[0.5] h-[48px] w-full px-[16px]  outline-none ${
 						showError ? "border-[3px] border-myRed placeholder:text-myRed" : ""
-					} `}
+					} 
+					`}
 					type="text"
 					name="link"
 					id="link"
@@ -60,7 +61,9 @@ const ShortenLinks = ({ showError, setShowError }) => {
 			isFetching
 				? "bg-gray-400 cursor-not-allowed"
 				: "bg-myCyan hover:opacity-80"
-		}`}
+		}
+		
+		md:w-[188px] md:inline-block`}
 			>
 				{isFetching ? "Please Wait" : "Shorten It!"}
 			</button>
