@@ -36,16 +36,16 @@ const AdvancedStats = () => {
 						statistics dashboard.
 					</p>
 
-					<div className="h-[1014px] w-full relative mt-[92px] md:h-[355px] ">
+					<div className="h-[1014px] w-full relative mt-[92px] md:h-[960px]  lg:h-[355px] border border-red-500  ">
 						<img
-							className="absolute top-0 translate-x-[-50%] left-[50%]  z-[0] md:top-[50%] md:translate-y-[-50%] md:rotate-[90deg] "
+							className="absolute top-0 translate-x-[-50%] left-[50%]  z-[0] md:h-[860px] lg:top-[50%] lg:translate-y-[-50%] lg:rotate-[90deg] "
 							src={cyanLine}
 							alt="line"
 						/>
 
-						<div className="h-full w-full justify-between z-[1000] flex flex-col gap-[92px] md:flex-row md:gap-[20px]  ">
-							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] lg:w-[350px] ">
-								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center md:left-[32px] md:translate-x-0 ">
+						<div className="h-full w-full justify-between z-[1000] flex flex-col items-center lg:flex-row lg:gap-[20px] border border-green-500 ">
+							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] md:w-[600px] md:h-[234px] lg:w-[350px] ">
+								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center lg:left-[32px] lg:translate-x-0 ">
 									<img
 										src={brandIdentity}
 										alt=""
@@ -61,8 +61,8 @@ const AdvancedStats = () => {
 								</p>
 							</div>
 
-							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] md:translate-y-[44px] lg:w-[350px]  ">
-								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center md:left-[32px] md:translate-x-0 ">
+							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] md:w-[600px]  md:h-[234px] md:translate-y-[44px] lg:w-[350px]  ">
+								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center lg:left-[32px] lg:translate-x-0 ">
 									<img
 										src={detailedRecords}
 										alt=""
@@ -79,8 +79,8 @@ const AdvancedStats = () => {
 								</p>
 							</div>
 
-							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] md:translate-y-[88px] lg:w-[350px]">
-								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center md:left-[32px] md:translate-x-0 ">
+							<div className="w-full h-[267px] relative pt-[77px] rounded-[5px] bg-white px-[32px] md:w-[600px]  md:h-[234px] md:translate-y-[88px] lg:w-[350px]">
+								<div className="w-[88px] h-[88px] absolute left-[50%] translate-x-[-50%] top-[-44px] rounded-[50%] bg-myPurple2 flex items-center justify-center lg:left-[32px] lg:translate-x-0 ">
 									<img
 										src={fullyCustomizable}
 										alt=""

@@ -31,7 +31,7 @@ const ShortenLinks = ({ showError, setShowError }) => {
 			action=""
 			className={`${
 				showError ? "h-[182px] top-[-91px] " : "h-[160px] top-[-80px] "
-			} absolute left-0 w-full p-[24px] bg-myPurple2 rounded-[10px] flex flex-col justify-between transition-all md:flex-row md:gap-[24px] lg:px-[64px] lg:py-[52px] `}
+			} absolute left-0 w-full p-[24px] bg-myPurple2 rounded-[10px] flex flex-col justify-between transition-all md:flex-row md:gap-[24px] md:px-[40px] md:py-[52px]  lg:px-[64px] `}
 		>
 			<div className="w-full md:w-[calc(100%-188px)]">
 				<input

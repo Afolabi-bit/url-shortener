@@ -4,19 +4,19 @@ import HeroIllustration from "/images/illustration-working.svg";
 
 const Hero = () => {
 	return (
-		<section className="min-h-[558px] w-full pt-[23px] pb-[88px] overflow-hidden">
+		<section className="min-h-[558px] w-full pt-[23px] pb-[88px] overflow-hidden md:relative">
 			<div className="container lg:flex lg:flex-row-reverse lg:gap-[102px] ">
 				{/* Mobile hero image */}
-				<div className="w-full  lg:hidden ">
-					<div className="absolute top-[96px] right-0 w-[305px] h-[337px] overflow-hidden ">
+				<div className="w-full  lg:hidden  ">
+					<div className="absolute top-[96px] right-0 w-[305px] h-[337px] md:top-[40px] md:w-[475px] md:h-[500px]  overflow-hidden ">
 						<img
-							className="absolute top-0 left-0 w-[460px] h-[337px] z-[-1]  "
+							className="absolute top-0 left-0 w-[460px] h-[337px] z-[-1] md:w-[580px] md:h-[500px]  "
 							src={HeroBg}
 							alt="Illustration of a woman working at a computer"
 						/>
 					</div>
 					<img
-						className="w-full h-[270px] object-cover z-[10] mt-[44px] "
+						className="w-full h-[270px] object-cover z-[10] mt-[44px] md:h-[430px] md:object-fill "
 						src={HeroImg}
 						alt="Illustration of a woman working at a computer"
 					/>
@@ -33,12 +33,13 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center h-[289px] mt-[60px] md:items-start md:w-[593px] md:h-[451px] ">
-					<h1 className="font-bold text-[42px] leading-[48px] text-center tracking-[-1.05px] text-myPurple1 mb-[15px] md:font-bold md:leading-[90px] md:tracking-[-2px] lg:text-[80px] md:text-left">
+				{/* Text */}
+				<div className="flex flex-col items-center h-[289px]  mt-[60px] md:mt-[100px] lg:items-start lg:w-[593px] lg:h-[451px]  ">
+					<h1 className="font-bold text-[42px] leading-[48px] text-center tracking-[-1.05px] text-myPurple1 mb-[15px] md:text-[52px] md:font-bold md:leading-[90px] md:tracking-[-2px] lg:text-[80px] md:text-left">
 						More than just shorter links
 					</h1>
 
-					<p className="font-[500] text-[18px] leading-[30px] tracking-[0.12px] text-center text-myGray1 mb-[32px]  md:text-[22px] md:leading-[36px] md:tracking-[0.15px] md:text-left">
+					<p className="font-[500] text-[18px] leading-[30px] tracking-[0.12px] text-center text-myGray1 mb-[32px]  md:text-[22px] md:leading-[36px] md:tracking-[0.15px] lg:text-left">
 						Build your brand’s recognition and get detailed insights on how your
 						links are performing.
 					</p>
